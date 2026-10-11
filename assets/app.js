@@ -53,10 +53,46 @@
     if (e.key === "ArrowLeft") show(cur - 1); else if (e.key === "ArrowRight") show(cur + 1);
   });
 
+  // about: live CCTV clock + typewriter text
+  var clock = document.getElementById("clock");
+  function tick() {
+    var d = new Date(), p = function (n) { return (n < 10 ? "0" : "") + n; };
+    clock.textContent = p(d.getDate()) + "/" + p(d.getMonth() + 1) + "/" + d.getFullYear() + " " + p(d.getHours()) + ":" + p(d.getMinutes()) + ":" + p(d.getSeconds());
+  }
+  tick(); setInterval(tick, 1000);
+
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var typed = false;
+  function startTyping() {
+    if (typed) return; typed = true;
+    var nodes = Array.prototype.slice.call(document.querySelectorAll(".about .type"));
+    var jobs = nodes.map(function (n) { var v = n.querySelector(".vis"); return { n: n, v: v, text: n.querySelector(".sr").textContent, ms: +n.getAttribute("data-speed") || 12 }; });
+    if (reduced) { jobs.forEach(function (j) { j.v.textContent = j.text; }); return; }
+    var k = 0;
+    (function next() {
+      if (k >= jobs.length) return;
+      var j = jobs[k++], i = 0; j.n.classList.add("typing");
+      var t0 = Date.now();
+      (function step() {
+        i = Math.min(j.text.length, Math.floor((Date.now() - t0) / j.ms) + 1); j.v.textContent = j.text.slice(0, i);
+        if (i < j.text.length) setTimeout(step, 16); else { j.n.classList.remove("typing"); next(); }
+      })();
+    })();
+  }
+  // reserve the final height so the layout does not jump while typing
+  (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function () {
+    if (typed) return;
+    document.querySelectorAll(".about .type").forEach(function (n) {
+      var v = n.querySelector(".vis"); v.textContent = n.querySelector(".sr").textContent;
+      n.style.minHeight = n.offsetHeight + "px"; v.textContent = "";
+    });
+  });
+  window.addEventListener("resize", function () { if (typed) document.querySelectorAll(".about .type").forEach(function (n) { n.style.minHeight = ""; }); });
+
   // scroll reveal
   var els = document.querySelectorAll(".rv, .contact, .about");
   if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
+    var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add("in"); if (x.target.id === "about") startTyping(); io.unobserve(x.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (e) { e.classList.add("rv"); io.observe(e); });
-  } else els.forEach(function (e) { e.classList.add("in"); });
+  } else { els.forEach(function (e) { e.classList.add("in"); }); startTyping(); }
 })();
