@@ -8,9 +8,9 @@ window.PROJECTS = [
       { slug: "hula-fairy", title: "Fairy", kind: "v" },
       { slug: "hula-vampire", title: "Vampire", kind: "v" },
       { slug: "hula-boxer", title: "Boxer", kind: "v" },
-      { slug: "hula-octopus", title: "Octopus", kind: "v" },
+      { slug: "hula-baby", title: "Baby boss", kind: "v" },
       { slug: "hula-cartoon", title: "Cartoon", kind: "v" },
-      { slug: "hula-jelly", title: "Jelly", kind: "v" }
+      { slug: "hula-street", title: "Street style", kind: "v" }
     ]
   },
   {
@@ -41,10 +41,10 @@ window.PROJECTS = [
     text: "UGC-style and AI character ads for a children’s learning app.",
     clips: [
       { slug: "ik-dino", title: "Dinosaurs", kind: "v" },
-      { slug: "ik-claw", title: "Claw machine", kind: "v" },
-      { slug: "ik-aquarium", title: "Aquarium", kind: "v" },
+      { slug: "ik-read", title: "Learn to read", kind: "v" },
+      { slug: "ik-screen", title: "Screen-time story", kind: "v" },
       { slug: "ik-brain-1", title: "Brain story 1", kind: "v" },
-      { slug: "ik-brain-2", title: "Brain story 2", kind: "v" },
+      { slug: "ik-tips", title: "Parenting tips", kind: "v" },
       { slug: "ik-kids", title: "Kid characters", kind: "v" }
     ]
   },
