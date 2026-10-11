@@ -48,7 +48,6 @@ h1{font-weight:900;font-size:clamp(46px,9.4vw,138px);line-height:.92;letter-spac
 
 /* work */
 .work{max-width:var(--max);margin:0 auto;padding:0 var(--pad) 40px}
-.proj:first-child{border-top:0;padding-top:clamp(18px,3vw,36px)}
 .proj{padding:clamp(40px,6vw,84px) 0;border-top:1px solid var(--line)}
 .proj-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 40px;margin-bottom:28px}
 .proj-head h2{font-weight:900;font-size:clamp(34px,5.4vw,76px);letter-spacing:-.03em;line-height:1}
@@ -100,7 +99,7 @@ dialog[open]{display:grid;grid-template-rows:1fr auto;justify-items:center;align
 @media(max-width:700px){.play-big .disc{width:68px;height:68px}.play-big .disc svg{width:26px;height:26px;transform:translateX(2px)}.play-big{gap:12px}.play-big .lbl{font-size:10px;letter-spacing:.18em}}
 
 /* about — CCTV / HUD style, showreel palette */
-.about{--hud:#efe9ff;--vi:#8b5cff;--or:#ff6a1f;max-width:var(--max);margin:0 auto;padding:clamp(40px,6vw,90px) var(--pad);border-top:1px solid var(--line)}
+.about{--hud:#efe9ff;--vi:#8b5cff;--or:#ff6a1f;max-width:var(--max);margin:0 auto;padding:clamp(24px,3vw,44px) var(--pad) clamp(24px,3vw,44px);border-top:1px solid var(--line)}
 .cctv{position:relative;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;aspect-ratio:1.35;min-height:600px;border:1px solid #8b5cff55;border-radius:6px;background:#050408;overflow:hidden;box-shadow:0 0 100px -40px #8b5cffaa}
 .cctv::before{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;background:repeating-linear-gradient(0deg,#00000040 0 1px,transparent 1px 4px);mix-blend-mode:multiply}
 .cctv::after{content:"";position:absolute;left:0;right:0;height:22%;top:-30%;z-index:5;pointer-events:none;background:linear-gradient(transparent,#8b5cff1c,transparent);animation:roll 7s linear infinite}
