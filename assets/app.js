@@ -54,7 +54,7 @@
   });
 
   // scroll reveal
-  var els = document.querySelectorAll(".rv, .contact");
+  var els = document.querySelectorAll(".rv, .contact, .about");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add("in"); io.unobserve(x.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
     els.forEach(function (e) { e.classList.add("rv"); io.observe(e); });
