@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAIA.VISION — AI Creative Motion Design</title>
+  <meta name="description" content="Portfolio and 2026 showreel of an AI creative motion designer: AI-generated video ads for mobile apps, product tests and personal AI films.">
+  <meta name="theme-color" content="#07070a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RAIA.VISION — AI Creative Motion Design">
+  <meta property="og:description" content="Showreel 2026 · AI video ads, app creatives and personal AI films.">
+  <meta property="og:image" content="https://polumnocka-byte.github.io/posters/showreel.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="glow" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <header class="nav" id="top">
+    <a class="logo" href="#top" aria-label="RAIA.VISION home">RAIA<span>.</span>VISION</a>
+    <nav aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Showreel / 2026</p>
+      <h1>AI Creative<br><em>Motion Design</em></h1>
+
+      <div class="player" id="showreel">
+        <video id="reel" preload="none" playsinline poster="posters/showreel.jpg" aria-label="Showreel 2026">
+          <source src="media/showreel.mp4" type="video/mp4">
+        </video>
+        <button class="play-big" id="reelPlay" aria-label="Play showreel">
+          <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
+          <span>Play showreel · 0:46</span>
+        </button>
+      </div>
+
+      <ul class="chips" id="chips" aria-label="Jump to a project"></ul>
+    </section>
+
+    <section id="work" class="work" aria-label="Selected work"></section>
+
+    <section id="contact" class="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Let’s create<br><em>something.</em></h2>
+      <a class="mail" href="mailto:ramilyasad23@gmail.com">ramilyasad23@gmail.com</a>
+      <div class="socials">
+        <a class="btn" href="https://instagram.com/raia.vision" target="_blank" rel="noopener">
+          <b>Instagram</b><span>@raia.vision</span>
+        </a>
+        <a class="btn" href="https://t.me/ramilias" target="_blank" rel="noopener">
+          <b>Telegram</b><span>@ramilias</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>© 2026 RAIA.VISION</span>
+    <span>AI creative motion design</span>
+  </footer>
+
+  <dialog id="lightbox" aria-label="Video player">
+    <button class="lb-close" id="lbClose" aria-label="Close video">×</button>
+    <button class="lb-nav prev" id="lbPrev" aria-label="Previous video">‹</button>
+    <button class="lb-nav next" id="lbNext" aria-label="Next video">›</button>
+    <div class="lb-stage" id="lbStage"><video id="lbVideo" controls playsinline></video></div>
+    <p class="lb-cap" id="lbCap"></p>
+  </dialog>
+
+  <script src="assets/projects.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
